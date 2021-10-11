@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product CRUD</title>
+</head>
+<body>
+  <h2> Product CRUD details </h2>
+  <form action="/product" method="POST">
+    <input type="text" placeholder="Product Name" name="name"><br>
+    <input type="text" placeholder="Title" name="title"><br>
+    <input type="text" placeholder="Color" name="color"><br>
+    <input type="text" placeholder="price" name="price"><br>
+    <button type="submit">Submit</button>
+  </form>
+  <br><br>
+ 
+<h3>Display Data for product</h3>
+
+<ul class="products">
+  <!-- Loop through quotes -->
+  <% for(var i = 0; i < product.length; i++) { %>
+    <li class="product">
+      <!-- Output name from the iterated quote object -->
+      <b>Name:</b><span><%= product[i].name %></span>
+      <!-- Output quote from the iterated quote object -->
+      <b>Title:</b><span><%= product[i].title %></span>
+      <!-- Output name from the iterated quote object -->
+      <b>Color:</b><span><%= product[i].color %></span>
+      <!-- Output quote from the iterated quote object -->
+      <b>Price:</b> <span><%= product[i].price %></span>
+    </li>
+  <% } %>
+</ul>
+  
+<script src="/main.js"></script>
+<div>
+    <h3>Update Operations on products!</h3>
+
+    <button id="update-button">Update your Details</button>
+  </div>
+</body>
+
+</html>
