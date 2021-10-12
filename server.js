@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // create express app
 const app = express();
-require('./app/routes/note.routes.js')(app);
+
 
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
     res.json({"message": "Product CRUD application"});
 });
 
-
+require('./app/routes/product.routes.js')(app);
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });

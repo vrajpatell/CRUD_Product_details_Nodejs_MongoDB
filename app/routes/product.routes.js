@@ -1,5 +1,9 @@
 module.exports = (app) => {
     const products = require('../controllers/product.controller.js');
+    const lamdas = require("../controllers/lamdas.controller.js");
+
+    // lambdas
+    app.get("/", lamdas.get);
 
     // Create a new product
     app.post('/products', products.create);
