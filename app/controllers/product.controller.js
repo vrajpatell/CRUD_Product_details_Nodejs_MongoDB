@@ -1,4 +1,4 @@
-const Product = require("../models/product.model.ts");
+const Product = require("../models/product.model.js");
 
 exports.create = (req, res) => {
   if (!req.body.content) {
